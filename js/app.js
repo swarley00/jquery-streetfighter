@@ -29,10 +29,19 @@ $(document).ready(function() {
 		);
 	})
 	.mouseup(function() {
-		//ryu goes back to his ready position
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
+	});
+	$(document).keydown(function(event) {
+		if (event.which == 88) {
+			$('.ryu-ready').hide();
+			$('.ryu-cool').show();
+		}
 	}); 
+	$(document).keyup(function() {
+		$('.ryu-ready').show();
+		$('.ryu-cool').hide();
+	});
 });
 
 function playHadouken () {
